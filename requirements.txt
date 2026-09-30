@@ -1,0 +1,10 @@
+# Local tooling (dbt + AI apps). Airflow runs in Docker and has its own image.
+dbt-core==1.8.*
+dbt-snowflake==1.8.*
+snowflake-connector-python[pandas]
+openai
+python-dotenv
+streamlit
+pandas
+numpy
+pyarrow

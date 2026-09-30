@@ -1,0 +1,24 @@
+name: 'zomato'
+version: '1.0.0'
+profile: 'zomato'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  zomato:
+    staging: { +materialized: view,  +schema: staging }
+    marts:   { +materialized: table, +schema: marts }
+
+# Snapshot config lives at the top level (the original nested it under models:, where dbt ignores it).
+snapshots:
+  zomato:
+    +target_schema: snapshots

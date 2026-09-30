@@ -1,0 +1,15 @@
+# Credentials come from environment variables only - this file is safe to commit.
+# Locally: set them in your shell (see ../ai/example.env). In Airflow: docker-compose injects them.
+zomato:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account:   "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user:      "{{ env_var('SNOWFLAKE_USER') }}"
+      password:  "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role:      DBT_ROLE
+      warehouse: ZOMATO_WH
+      database:  ZOMATO
+      schema:    STAGING
+      threads:   4
