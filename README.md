@@ -1,8 +1,7 @@
 # Food Delivery Pipeline — AI Data Engineering End-to-End Project
 
-> Built by following the [Zomato AI Data Engineering tutorial](https://github.com/darshilparmar/zomato-ai-data-engineering-end-to-end-project) (uses the Zomato dataset).
-
-> 🎥 **Video walkthrough:** [Watch the full project tutorial on YouTube](https://youtu.be/kYwaNMQ3XT8?si=Ge8ilVxkmGQS6iIg)
+> 🙏 **Credit:** this project is my implementation of **Darshil Parmar's** end-to-end tutorial.  
+> 🎥 [Watch the original video on YouTube](https://www.youtube.com/watch?v=kYwaNMQ3XT8) · 📦 [Original repository](https://github.com/darshilparmar/zomato-ai-data-engineering-end-to-end-project) · See [Credits](#credits) below.
 
 A complete batch data pipeline that takes Zomato-style food delivery data from raw CSVs all the way to AI-powered analytics:
 
@@ -139,3 +138,9 @@ python ai/enrich_reviews.py
 streamlit run ai/rag_chat.py      # chat with reviews
 streamlit run ai/text_to_sql.py   # chat with the warehouse
 ```
+
+## Credits
+
+- **Tutorial & original project:** [Darshil Parmar](https://github.com/darshilparmar). Architecture, dataset and core code come from the video [*Zomato AI Data Engineering: End-to-End Project*](https://www.youtube.com/watch?v=kYwaNMQ3XT8) and [its repository](https://github.com/darshilparmar/zomato-ai-data-engineering-end-to-end-project). Go watch it and support the channel.
+- **Dataset:** Zomato/Swiggy-style restaurant, menu and user data, plus generated orders and reviews, all distributed with the tutorial.
+- **My work:** setting up and running the full pipeline on my own AWS, Snowflake and OpenAI accounts, and fixing the issues listed under *Changes vs. the original tutorial repo* above.
