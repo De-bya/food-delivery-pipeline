@@ -1,8 +1,5 @@
 # Food Delivery Pipeline — AI Data Engineering End-to-End Project
 
-> 🙏 **Credit:** this project is my implementation of **Darshil Parmar's** end-to-end tutorial.  
-> 🎥 [Watch the original video on YouTube](https://www.youtube.com/watch?v=kYwaNMQ3XT8) · 📦 [Original repository](https://github.com/darshilparmar/zomato-ai-data-engineering-end-to-end-project) · See [Credits](#credits) below.
-
 A complete batch data pipeline that takes Zomato-style food delivery data from raw CSVs all the way to AI-powered analytics:
 
 **Zomato/Food Delivery Dataset → Amazon S3 → Snowflake → dbt → Airflow → AI (OpenAI)**
@@ -14,14 +11,6 @@ The dataset lands in an S3 data lake and flows into Snowflake through a storage 
 > 📂 **Dataset + project slides:** [Google Drive folder](https://drive.google.com/drive/folders/1FEnGWMHhHzzTUCZOw1-YnH2v3DMuM-rs?usp=sharing) — download the CSVs here and place them under `data/` (they're too large to commit to the repo).
 
 > 🛠️ **Building it yourself? Follow [RUNBOOK.md](RUNBOOK.md)**, which walks through every phase with checks.
-
-### Changes vs. the original tutorial repo
-- Added the missing `zomato/profiles.yml` (env-var based), `RUNBOOK.md`, env templates and `requirements.txt`
-- Added the SCD2 snapshot (`snap_restaurants`) and the reconciliation test the README promised
-- Fixed `dbt_project.yml` snapshot config, a trailing comma in `stg_reviews`, and the `mart_daily_city_revenune` typo
-- Granted `DBT_ROLE` usage on the stage and file format, so Airflow's `reload_raw` task can run
-- `enrich_reviews.py` now honours `SAMPLE_N` and gets warehouse/db/role inside Airflow
-- `text_to_sql.py`: the LLM's schema now matches the real models, and the SQL guard uses whole-word matching
 
 ## What gets built
 
@@ -141,6 +130,5 @@ streamlit run ai/text_to_sql.py   # chat with the warehouse
 
 ## Credits
 
-- **Tutorial & original project:** [Darshil Parmar](https://github.com/darshilparmar). Architecture, dataset and core code come from the video [*Zomato AI Data Engineering: End-to-End Project*](https://www.youtube.com/watch?v=kYwaNMQ3XT8) and [its repository](https://github.com/darshilparmar/zomato-ai-data-engineering-end-to-end-project). Go watch it and support the channel.
+- **Tutorial & original project:** [Darshil Parmar](https://github.com/darshilparmar). Architecture, dataset and core code come from the video [*Zomato AI Data Engineering: End-to-End Project*](https://www.youtube.com/watch?v=kYwaNMQ3XT8) 
 - **Dataset:** Zomato/Swiggy-style restaurant, menu and user data, plus generated orders and reviews, all distributed with the tutorial.
-- **My work:** setting up and running the full pipeline on my own AWS, Snowflake and OpenAI accounts, and fixing the issues listed under *Changes vs. the original tutorial repo* above.
